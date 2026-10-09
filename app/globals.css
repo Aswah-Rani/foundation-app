@@ -1,26 +1,65 @@
 @import "tailwindcss";
 
+/*
+  Design tokens — mobile-first (375px base), desktop cap at 1280px (max-w-desktop).
+*/
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --surface: #f1f5f9;
+  --surface-elevated: #ffffff;
+  --border: #e2e8f0;
+  --muted: #64748b;
+  --accent: #2563eb;
+  --accent-foreground: #ffffff;
+  --success: #15803d;
+  --danger: #b91c1c;
+  --page-x: 1rem;
+  --page-y: 2rem;
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --page-x: 2rem;
+    --page-y: 3rem;
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --spacing-page-x: var(--page-x);
+  --spacing-page-y: var(--page-y);
+  --breakpoint-desktop: 80rem;
+  --width-desktop: 80rem;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0f172a;
+    --foreground: #f1f5f9;
+    --surface: #1e293b;
+    --surface-elevated: #334155;
+    --border: #475569;
+    --muted: #94a3b8;
+    --accent: #3b82f6;
+    --accent-foreground: #f8fafc;
+    --success: #4ade80;
+    --danger: #f87171;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
